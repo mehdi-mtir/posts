@@ -17,6 +17,10 @@ export class PostService {
     return this.posts;
   }
 
+  deletePost(indice : number){
+    this.posts.splice(indice, 1);
+  }
+
   constructor() {
     this.posts = [];
    }

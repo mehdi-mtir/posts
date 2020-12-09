@@ -1,1 +1,24 @@
-<p>list works!</p>
+<h1>Liste des posts</h1>
+<input type="button" class="btn btn-success" value="Ajouter un post" (click)="goToAdd();">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Body</th>
+      <th scope="col">UserId</th>
+      <th scope="col">Editer</th>
+      <th scope="col">Supprimer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of posts; let indice = index">
+      <th scope="row">{{post.id}}</th>
+      <td>{{post.title}}</td>
+      <td>{{post.body}}</td>
+      <td>{{post.userId}}</td>
+      <td><input type="button" class="btn btn-info" value="Editer"></td>
+      <td><input type="button" class="btnt btn-danger" value="Supprimer" (click)="delete(indice)"></td>
+    </tr>
+  </tbody>
+</table>
