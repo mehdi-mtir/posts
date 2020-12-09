@@ -1,0 +1,22 @@
+<h1>Ajouter un post</h1>
+<form #f="ngForm" (ngSubmit)="add(f)">
+  <div class="mb-3">
+    <label for="userId" class="form-label">UserId</label>
+    <input type="number" class="form-control" id="userId" name="userId" ngModel required >
+  </div>
+  <div class="mb-3">
+    <label for="id" class="form-label">Id</label>
+    <input type="number" class="form-control" id="id" name="id" ngModel required>
+  </div>
+  <div class="mb-3">
+    <label for="title" class="form-label">Titre</label>
+    <input type="text" class="form-control" id="title" name="title" ngModel required>
+  </div>
+  <div class="mb-3">
+    <label for="body" class="form-label" >Contenu</label>
+    <textarea class="form-control" id="body" rows="3" name="body" ngModel required></textarea>
+  </div>
+  <div>
+    <input type="submit" class="btn btn-primary" value="Ajouter" [disabled]="f.invalid" >
+  </div>
+</form>
