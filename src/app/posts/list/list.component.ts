@@ -9,7 +9,7 @@ import { PostService } from '../services/post.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  posts : Post[];
+  posts = new Array<Post>();
 
   constructor(private postService : PostService, private router : Router) { }
 
@@ -26,7 +26,14 @@ export class ListComponent implements OnInit {
     this.router.navigate(['/posts', 'edit', indice])
   }
   ngOnInit(): void {
-    this.posts = this.postService.getPosts();
+
+    this.postService.getPosts().subscribe(
+      resultat =>{
+        this.posts = resultat;
+        //console.log("success");
+        return this.posts;
+      }
+    )
   }
 
 }

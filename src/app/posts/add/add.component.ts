@@ -14,10 +14,14 @@ export class AddComponent implements OnInit {
 
   add(f : NgForm){
     let post = this.postService.createPost(f.value.userId, f.value.id, f.value.title, f.value.body);
-    this.postService.addPost(post);
-    console.log(this.postService.getPosts());
+    this.postService.addPost(post).subscribe(
+      resultat =>{
+        console.log(resultat);
+      }
+    );
+    //console.log(this.postService.getPosts());
     //naviguer vers la liste
-    this.router.navigate(["/posts"]);
+    ///this.router.navigate(["/posts"]);
   }
 
   ngOnInit(): void {
