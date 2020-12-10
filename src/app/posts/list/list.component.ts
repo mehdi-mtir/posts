@@ -21,6 +21,10 @@ export class ListComponent implements OnInit {
     this.postService.deletePost(indice);
   }
 
+
+  editer(indice : number){
+    this.router.navigate(['/posts', 'edit', indice])
+  }
   ngOnInit(): void {
     this.posts = this.postService.getPosts();
   }

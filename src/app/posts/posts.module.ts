@@ -4,7 +4,7 @@ import { AddComponent } from './add/add.component';
 import { ListComponent } from './list/list.component';
 import { EditComponent } from './edit/edit.component';
 import { PostService } from './services/post.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     EditComponent],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers:[PostService]
 })

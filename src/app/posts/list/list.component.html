@@ -17,7 +17,7 @@
       <td>{{post.title}}</td>
       <td>{{post.body}}</td>
       <td>{{post.userId}}</td>
-      <td><input type="button" class="btn btn-info" value="Editer"></td>
+      <td><input type="button" class="btn btn-info" value="Editer" (click)="editer(indice)"></td>
       <td><input type="button" class="btnt btn-danger" value="Supprimer" (click)="delete(indice)"></td>
     </tr>
   </tbody>

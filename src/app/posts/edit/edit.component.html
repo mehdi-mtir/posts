@@ -1,1 +1,23 @@
-<p>edit works!</p>
+<h1>Editer un post</h1>
+<form [formGroup]="postEditForm" (ngSubmit)="edit()" >
+  <div class="mb-3">
+    <label for="userId" class="form-label">UserId</label>
+    <input type="number" class="form-control" id="userId" formControlName="userId">
+  </div>
+  <div class="mb-3">
+    <label for="id" class="form-label">Id</label>
+    <input type="number" class="form-control" id="id" formControlName="id">
+  </div>
+  <div class="mb-3">
+    <label for="title" class="form-label">Titre</label>
+    <input type="text" class="form-control" id="title" formControlName="title">
+  </div>
+  <div class="mb-3">
+    <label for="body" class="form-label">Contenu</label>
+    <textarea class="form-control" id="body" rows="3" formControlName="body"></textarea>
+  </div>
+  <div>
+    <input type="submit" class="btn btn-primary" value="Editer" [disabled]="postEditForm.invalid" >
+  </div>
+</form>
+

@@ -17,8 +17,16 @@ export class PostService {
     return this.posts;
   }
 
+  getPost(indice : number){
+    return this.posts[indice];
+  }
+
   deletePost(indice : number){
     this.posts.splice(indice, 1);
+  }
+
+  editPost(indice : number, post : Post){
+    this.posts[indice]=post;
   }
 
   constructor() {
