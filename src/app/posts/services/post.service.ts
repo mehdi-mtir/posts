@@ -34,8 +34,18 @@ export class PostService {
       .get<Post[]>('https://jsonplaceholder.typicode.com/posts')
   }
 
-  getPost(indice : number){
+  /*getPost(indice : number){
     return this.posts[indice];
+  }*/
+
+  getPost(id : number):Observable<Post>{
+    return this.http
+    .get<Post>('https://jsonplaceholder.typicode.com/posts/'+id);
+  }
+
+  getComments(id : number):Observable<Comment[]>{
+    return this.http
+    .get<Comment[]>('https://jsonplaceholder.typicode.com/posts/'+id+"/comments");
   }
 
   deletePost(indice : number){
